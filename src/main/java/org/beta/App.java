@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,7 +18,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        Font.loadFont(getClass().getResourceAsStream("Pixelfy-ow9yd.ttf"), 14);
+        scene = new Scene(loadFXML("GameOverView"), 800, 600);
         stage.setScene(scene);
         stage.show();
     }
