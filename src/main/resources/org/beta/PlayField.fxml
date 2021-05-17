@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
@@ -50,22 +50,19 @@
             </Text>
          </children>
       </GridPane>
-      <AnchorPane opacity="0.76" prefHeight="235.0" prefWidth="390.0">
+      <Pane prefHeight="239.0" prefWidth="394.0">
          <children>
-            <ImageView fitHeight="235.0" fitWidth="394.0">
+            <ImageView fitHeight="235.0" fitWidth="394.0" layoutX="-1.0">
                <image>
                   <Image url="@wizard_of_wor_pal.gif" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="26.0" layoutX="4.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="26.0" layoutX="316.0" layoutY="199.0" stroke="BLACK" strokeType="INSIDE" width="70.0" />
-            <Ellipse fill="#1f93ff0b" layoutX="368.0" layoutY="27.0" radiusX="17.0" radiusY="20.0" stroke="#f7f6f6" strokeType="INSIDE" />
-            <Ellipse fill="#1f93ff0b" layoutX="21.0" layoutY="27.0" radiusX="17.0" radiusY="20.0" stroke="#faf8f8" strokeType="INSIDE" />
+            <Ellipse fill="#1f93ff0b" layoutX="363.0" layoutY="25.0" radiusX="17.0" radiusY="20.0" stroke="#f7f6f6" strokeType="INSIDE" />
+            <Ellipse fill="#1f93ff0b" layoutX="32.0" layoutY="25.0" radiusX="17.0" radiusY="20.0" stroke="#faf8f8" strokeType="INSIDE" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ac1fff" height="26.0" layoutX="311.0" layoutY="193.0" stroke="BLACK" strokeType="INSIDE" width="70.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ac1fff" height="26.0" layoutX="14.0" layoutY="193.0" stroke="BLACK" strokeType="INSIDE" width="70.0" />
          </children>
-         <effect>
-            <SepiaTone />
-         </effect>
-      </AnchorPane>
+      </Pane>
       <AnchorPane prefHeight="22.0" prefWidth="390.0">
          <children>
             <Circle fill="#ff261f" layoutX="15.0" layoutY="17.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
