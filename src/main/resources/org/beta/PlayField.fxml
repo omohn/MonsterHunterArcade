@@ -30,7 +30,7 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score ">
                <font>
-                  <Font name="Pixelfy-ow9yd.ttf" size="20.0" />
+                  <Font size="20.0" />
                </font>
             </Text>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0000000" GridPane.rowIndex="1">
