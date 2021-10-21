@@ -4,8 +4,8 @@
 }
 
 .pf_background {
-    -fx-background-image: url("../images/wizard_of_wor_pal.gif");
-    -fx-background-size: 100% 100%;
+    /*-fx-background-image: url("../images/wizard_of_wor_pal.gif");*/
+    /*-fx-background-size: 100% 100%;*/
 }
 
 @font-face {
