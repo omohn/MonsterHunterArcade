@@ -19,7 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        scene = new Scene(loadFXML("startScreenView"), 800, 600);
+        scene = new Scene(loadFXML("playFieldView"), 1000, 800);
         Font.loadFont(getClass().getResourceAsStream("fonts/Pixelfy-ow9yd.ttf"), 14);
         stage.setScene(scene);
         stage.show();
