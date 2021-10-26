@@ -1,12 +1,7 @@
 package org.beta;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 import org.beta.game.GameObject;
 import org.beta.game.PlayField;
 import org.beta.game.Wall;
@@ -52,12 +47,12 @@ public class PlayFieldViewController {
 
         playField = new PlayField();
 
-        List<Wall> wallsList = playField.getEnvironment();
+        List<GameObject> gameObjects = playField.getEnvironment();
 
-        for (Wall wall:
-             wallsList) {
+        for (GameObject gameObject:
+             gameObjects) {
 
-            labyrinth.getChildren().add(wall.getWall());
+            labyrinth.getChildren().add(gameObject.getGameObject());
         }
 
     }

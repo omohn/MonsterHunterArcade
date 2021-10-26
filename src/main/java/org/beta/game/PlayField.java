@@ -1,6 +1,9 @@
 package org.beta.game;
 
+import javafx.scene.Node;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,10 +11,12 @@ import java.util.List;
 
 public class PlayField extends Pane {
 
-    private List<Wall> environment = new ArrayList<>();
+    private List<GameObject> environment = new ArrayList<>();
+    private List<Enemy> enemies = new ArrayList<>();
 
     private final int FIELD_SIZE = 64;
     private final int WALL_DEPTH = 4;
+    private final int SPRITE_SIZE = FIELD_SIZE - 2 * WALL_DEPTH;
 
     private int[][] map = {
             {0, 9, 5, 3, 9, 5, 1, 5, 3, 9, 5, 3, 0},
@@ -27,8 +32,21 @@ public class PlayField extends Pane {
     private int playFieldCols = map[0].length;
 
     public PlayField() {
+        initializeLabyrinth();
+        GameObject first_enemy = new Enemy(3 * FIELD_SIZE + WALL_DEPTH, 0 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE, SPRITE_SIZE, 1, (short) 3);
+        GameObject sec_enemy = new Enemy(10 * FIELD_SIZE + WALL_DEPTH, 1 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE, SPRITE_SIZE, 1, (short) 3);
+        GameObject third_enemy = new Enemy(5 * FIELD_SIZE + WALL_DEPTH, 4 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE, SPRITE_SIZE, 1, (short) 3);
+        environment.addAll(Arrays.asList(first_enemy, sec_enemy, third_enemy));
+
+        Player yellow = new Player(Color.YELLOW, 1 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        environment.add(yellow);
+        Player blue = new Player(Color.BLUE, 11 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        environment.add(blue);
 
 
+    }
+
+    private void initializeLabyrinth() {
         for (int i = 0; i < playFieldRows; i++) {
             for (int j = 0; j < playFieldCols; j++) {
                 int cell = map[i][j];
@@ -58,7 +76,7 @@ public class PlayField extends Pane {
         }
     }
 
-    public List<Wall> getEnvironment() {
+    public List<GameObject> getEnvironment() {
         return environment;
     }
 }

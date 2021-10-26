@@ -2,6 +2,7 @@ package org.beta.game;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
 public class Wall implements GameObject{
 
@@ -33,7 +34,8 @@ public class Wall implements GameObject{
 
     }
 
-    public Rectangle getWall() {
+    @Override
+    public Shape getGameObject() {
         return wall;
     }
 }
