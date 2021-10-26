@@ -39,9 +39,13 @@ public class PlayField extends Pane {
         environment.addAll(Arrays.asList(first_enemy, sec_enemy, third_enemy));
 
         Player yellow = new Player(Color.YELLOW, 1 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
-        environment.add(yellow);
+        Player yellow2 = new Player(Color.YELLOW, 0 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        Player yellow3 = new Player(Color.YELLOW, 0 * FIELD_SIZE + WALL_DEPTH, 5 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        environment.addAll(Arrays.asList(yellow, yellow2, yellow3));
         Player blue = new Player(Color.BLUE, 11 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
-        environment.add(blue);
+        Player blue2 = new Player(Color.BLUE, 12 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        Player blue3 = new Player(Color.BLUE, 12 * FIELD_SIZE + WALL_DEPTH, 5 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        environment.addAll(Arrays.asList(blue, blue2, blue3));
 
 
     }
