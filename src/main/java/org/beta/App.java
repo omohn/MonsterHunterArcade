@@ -22,6 +22,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("playFieldView"), 1000, 800);
         Font.loadFont(getClass().getResourceAsStream("fonts/Pixelfy-ow9yd.ttf"), 14);
         stage.setScene(scene);
+        stage.setTitle("Monster Hunter Arcade");
         stage.show();
     }
 
