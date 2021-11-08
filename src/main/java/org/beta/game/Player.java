@@ -4,7 +4,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
 
-public class Player implements GameObject{
+public class Player implements GameObject {
 
     private Circle avatar;
     private Paint color;
