@@ -129,13 +129,9 @@ public class PlayFieldViewController {
 
     }
 
-    public void keyPressed(KeyEvent keyEvent) {
-        System.out.println("key pressed");
-    }
 
-    public void keyReleased(KeyEvent keyEvent) {
-        System.out.println("key released");
-    }
+
+
 
 
 //
