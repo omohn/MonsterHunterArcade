@@ -12,6 +12,7 @@ import java.io.IOException;
 
 /**
  * JavaFX App
+ * added some text in practice-branch
  */
 public class App extends Application {
 
