@@ -20,7 +20,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        scene = new Scene(loadFXML("playFieldView"), 1000, 800);
+        scene = new Scene(loadFXML("startScreenView"), 850, 600);
         KeyHandler.getInstance().observeScene(scene);
 
         Font.loadFont(getClass().getResourceAsStream("fonts/Pixelfy-ow9yd.ttf"), 14);
