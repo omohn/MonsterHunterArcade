@@ -5,10 +5,8 @@ import javafx.beans.property.LongProperty;
 import javafx.beans.property.SimpleLongProperty;
 import javafx.fxml.FXML;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import org.beta.controls.KeyHandler;
 import org.beta.game.*;
 
@@ -33,18 +31,7 @@ public class PlayFieldViewController {
 
     private PlayField playField;
 
-    private List<Wall> walls = new ArrayList<>();
-
-//    private int[][] map = {
-//            {0, 18, 10, 6, 18, 10, 2, 10, 6, 18, 10, 6, 0},
-//            {0, 20, 18, 0, 8, 10, 0, 10, 8, 0, 6, 20, 0},
-//            {10, 0, 4, 16, 10, 6, 20, 18, 10, 4, 16, 0, 10},
-//            {0, 16, 12, 20, 18, 8, 0, 8, 6, 20, 24, 4, 0},
-//            {0, 20, 18, 8, 0, 6, 20, 18, 0, 8, 6, 20, 0},
-//            {0, 16, 8, 10, 12, 24, 8, 12, 24, 10, 8, 4, 0},
-//            {0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0}
-//    };
-
+    private List<GameObject> gameObjects = new ArrayList<>();
 
     @FXML
     private void switchToStartScreenView() throws IOException {
@@ -61,55 +48,88 @@ public class PlayFieldViewController {
 
 
 
-        List<GameObject> gameObjects = playField.getEnvironment();
+        List<GameObject> walls = playField.getEnvironment();
 
-        for (GameObject gameObject:
-             gameObjects) {
+        for (GameObject wall:
+             walls) {
 
+            labyrinth.getChildren().add(wall.getGameObject());
+        }
+
+        Enemy first_enemy = new Enemy(Color.RED,3 * FIELD_SIZE + WALL_DEPTH, 0 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE, SPRITE_SIZE, 2, Direction.DOWN);
+        Enemy sec_enemy = new Enemy(Color.RED, 10 * FIELD_SIZE + WALL_DEPTH, 1 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE, SPRITE_SIZE, 4, Direction.LEFT);
+        Enemy third_enemy = new Enemy(Color.RED, 5 * FIELD_SIZE + WALL_DEPTH, 4 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE, SPRITE_SIZE, 3, Direction.LEFT);
+        gameObjects.add(first_enemy);
+        gameObjects.add(sec_enemy);
+        gameObjects.add(third_enemy);
+
+
+        Player yellow = new Player(Color.YELLOW, 1 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        Player yellow2 = new Player(Color.YELLOW, 0 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        Player yellow3 = new Player(Color.YELLOW, 0 * FIELD_SIZE + WALL_DEPTH, 5 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        gameObjects.add(yellow);
+        gameObjects.add(yellow2);
+        gameObjects.add(yellow3);
+
+        Player blue = new Player(Color.BLUE, 11 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        Player blue2 = new Player(Color.BLUE, 12 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+        Player blue3 = new Player(Color.BLUE, 12 * FIELD_SIZE + WALL_DEPTH, 5 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
+
+        gameObjects.add(blue);
+        gameObjects.add(blue2);
+        gameObjects.add(blue3);
+
+        for (GameObject gameObject :
+                gameObjects) {
             labyrinth.getChildren().add(gameObject.getGameObject());
         }
 
-        Ball myPlayer = new Ball(0, 0, 30, Color.GREEN, 1, 1);
 
-
-        labyrinth.getChildren().add(myPlayer);
-
+        // initiating a Game Loop
         final LongProperty lastUpdateTime = new SimpleLongProperty(0);
         final AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
 
                 if (lastUpdateTime.get() > 0) {
-//                    System.out.println("timer started");
 
-
-                    // change the myPlayer position
                     double elapsedSeconds = (now - lastUpdateTime.get()) / 1_000_000_000.;
-//                    myPlayer.setCenterX(myPlayer.getCenterX() + elapsedSeconds * myPlayer.velocity * Math.cos(myPlayer.angle));
-//                    myPlayer.setCenterY(myPlayer.getCenterY() + 1);
 
-//                    // bounce against a vertical wall
-//                    if (myPlayer.getCenterX() <= myPlayer.getRadius()
-//                            || myPlayer.getCenterX() >= (myPlayerContainer.getWidth() - myPlayer.getRadius())) {
-//                        myPlayer.angle = Math.PI - myPlayer.angle;
-//                    }
-//                    // bounce against a horizontal wall
-//                    if (myPlayer.getCenterY() <= myPlayer.getRadius()
-//                            || myPlayer.getCenterY() >= (myPlayerContainer.getHeight() - myPlayer.getRadius())) {
-//                        {
-//                            myPlayer.angle = 2 * Math.PI - myPlayer.angle;
-//                        }
+                    moveEnemies(first_enemy, 0 * FIELD_SIZE + WALL_DEPTH, 4 * FIELD_SIZE + WALL_DEPTH);
+                    moveEnemies(sec_enemy, 2 * FIELD_SIZE + WALL_DEPTH, 10 * FIELD_SIZE + WALL_DEPTH);
+                    moveEnemies(third_enemy, 2 * FIELD_SIZE + WALL_DEPTH, 5 * FIELD_SIZE + WALL_DEPTH);
+
                     if (keyInput.isDown(KeyCode.UP)) {
-                        myPlayer.setCenterY(myPlayer.getCenterY() - 1);
+                        blue.setY(-2);
+
                     }
                     if (keyInput.isDown(KeyCode.DOWN)) {
-                        myPlayer.setCenterY(myPlayer.getCenterY() + 1);
+                        blue.setY(2);
+
                     }
                     if (keyInput.isDown(KeyCode.RIGHT)) {
-                        myPlayer.setCenterX(myPlayer.getCenterX() + 1);
+                        blue.setX(2);
+
                     }
                     if (keyInput.isDown(KeyCode.LEFT)) {
-                        myPlayer.setCenterX(myPlayer.getCenterX() - 1);
+                        blue.setX(-2);
+
+                    }
+                    if (keyInput.isDown(KeyCode.W)) {
+                        yellow.setY(-2);
+
+                    }
+                    if (keyInput.isDown(KeyCode.S)) {
+                        yellow.setY(2);
+
+                    }
+                    if (keyInput.isDown(KeyCode.D)) {
+                        yellow.setX(2);
+
+                    }
+                    if (keyInput.isDown(KeyCode.A)) {
+                        yellow.setX(-2);
+
                     }
                 }
 
@@ -121,28 +141,32 @@ public class PlayFieldViewController {
 
         timer.start();
 
-
-
-
-
-
-
     }
 
+    private void moveEnemies(Enemy enemy, int min, int max) {
 
+        if (enemy.getDirection() == Direction.DOWN) {
+            enemy.setY(enemy.getVelocity());
+            if (enemy.getY() >= max) {
+                enemy.setDirection(Direction.UP);
+            }
+        } else if (enemy.getDirection() == Direction.UP) {
+            enemy.setY(-enemy.getVelocity());
+            if (enemy.getY() <= min) {
+                enemy.setDirection(Direction.DOWN);
+            }
+        } else if (enemy.getDirection() == Direction.RIGHT) {
+            enemy.setX(enemy.getVelocity());
+            if (enemy.getX() >= max) {
+                enemy.setDirection(Direction.LEFT);
+            }
+        } else if (enemy.getDirection() == Direction.LEFT) {
+            enemy.setX(-enemy.getVelocity());
+            if (enemy.getX() <= min) {
+                enemy.setDirection(Direction.RIGHT);
+            }
+        }
 
-
-
-
-//
-//    private Color getRandomColor() {
-//        double r = random.nextDouble();
-//        double g = random.nextDouble();
-//        double b = random.nextDouble();
-//
-//        return new Color(r, g, b, 1);
-//
-//    }
-
+    }
 
 }

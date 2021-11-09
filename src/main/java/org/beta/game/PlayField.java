@@ -33,19 +33,7 @@ public class PlayField extends Pane {
 
     public PlayField() {
         initializeLabyrinth();
-        GameObject first_enemy = new Enemy(3 * FIELD_SIZE + WALL_DEPTH, 0 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE, SPRITE_SIZE, 1, (short) 3);
-        GameObject sec_enemy = new Enemy(10 * FIELD_SIZE + WALL_DEPTH, 1 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE, SPRITE_SIZE, 1, (short) 3);
-        GameObject third_enemy = new Enemy(5 * FIELD_SIZE + WALL_DEPTH, 4 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE, SPRITE_SIZE, 1, (short) 3);
-        environment.addAll(Arrays.asList(first_enemy, sec_enemy, third_enemy));
 
-        Player yellow = new Player(Color.YELLOW, 1 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
-        Player yellow2 = new Player(Color.YELLOW, 0 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
-        Player yellow3 = new Player(Color.YELLOW, 0 * FIELD_SIZE + WALL_DEPTH, 5 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
-        environment.addAll(Arrays.asList(yellow, yellow2, yellow3));
-        Player blue = new Player(Color.BLUE, 11 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
-        Player blue2 = new Player(Color.BLUE, 12 * FIELD_SIZE + WALL_DEPTH, 6 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
-        Player blue3 = new Player(Color.BLUE, 12 * FIELD_SIZE + WALL_DEPTH, 5 * FIELD_SIZE + WALL_DEPTH, SPRITE_SIZE);
-        environment.addAll(Arrays.asList(blue, blue2, blue3));
 
 
     }

@@ -4,20 +4,92 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class Enemy extends Rectangle implements GameObject{
+public class Enemy implements GameObject{
 
-    private long velocity;
-    private short direction;
+    private int velocity;
 
-    public Enemy(double x, double y, double width, double height, long velocity, short direction) {
-        super(x, y, width, height);
+    private Rectangle avatar;
+    private Paint color;
+    private int x;
+    private int y;
+    private int width;
+    private int height;
+    private boolean moveRight;
+    private boolean moveDown;
+    private Direction direction;
+
+    public Enemy(Paint color, int x, int y, int width, int height, int velocity, Direction direction) {
+        this.avatar = new Rectangle(x, y, width, height);
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
         this.velocity = velocity;
         this.direction = direction;
-        setFill(Paint.valueOf("red"));
+        this.avatar.setFill(Paint.valueOf("red"));
+
+
+
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
+    public boolean isMoveRight() {
+        return moveRight;
+    }
+
+    public void setMoveRight(boolean moveRight) {
+        this.moveRight = moveRight;
+    }
+
+    public boolean isMoveDown() {
+        return moveDown;
+    }
+
+    public void setMoveDown(boolean moveDown) {
+        this.moveDown = moveDown;
+    }
+
+    public int getVelocity() {
+        return velocity;
+    }
+
+    public void setVelocity(int velocity) {
+        this.velocity = velocity;
+    }
+
+    @Override
+    public int getX() {
+        return this.x;
+    }
+
+    @Override
+    public int getY() {
+        return this.y;
+    }
+
+    @Override
+    public void setX(int x) {
+        this.x += x;
+        avatar.setX(this.x);
+
+    }
+
+    @Override
+    public void setY(int y) {
+        this.y += y;
+        avatar.setY(this.y);
+
     }
 
     @Override
     public Shape getGameObject() {
-        return this;
+        return avatar;
     }
 }

@@ -28,6 +28,34 @@ public class Player implements GameObject {
     }
 
     @Override
+    public int getX() {
+        return this.x;
+    }
+
+    @Override
+    public int getY() {
+        return this.y;
+    }
+
+    @Override
+    public void setX(int x) {
+        avatar.setCenterX(avatar.getCenterX() + x);
+    }
+
+    @Override
+    public void setY(int y) {
+        avatar.setCenterY(avatar.getCenterY() + y);
+    }
+
+    public void setDirection(short direction) {
+        this.direction = direction;
+    }
+
+    public void setVelocity(int velocity) {
+        this.velocity = velocity;
+    }
+
+    @Override
     public Shape getGameObject() {
         return avatar;
     }
