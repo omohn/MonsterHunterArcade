@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import org.beta.controls.KeyHandler;
 
 import java.io.IOException;
 
@@ -18,10 +19,15 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Font.loadFont(getClass().getResourceAsStream("Pixelfy-ow9yd.ttf"), 14);
-        scene = new Scene(loadFXML("GameOverView"), 800, 600);
+
+        scene = new Scene(loadFXML("startScreenView"), 850, 600);
+        KeyHandler.getInstance().observeScene(scene);
+
+        Font.loadFont(getClass().getResourceAsStream("fonts/Pixelfy-ow9yd.ttf"), 14);
         stage.setScene(scene);
+        stage.setTitle("Monster Hunter Arcade");
         stage.show();
+
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -38,3 +44,4 @@ public class App extends Application {
     }
 
 }
+
