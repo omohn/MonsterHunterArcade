@@ -37,12 +37,12 @@
         </GridPane>
         <Text fill="#dceb07" fontSmoothingType="LCD" layoutX="223.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center; -fx-font-family: Pixelfy;" text="HIGH SCORE" wrappingWidth="376.0">
             <font>
-                <Font name="Pixelfy" size="63.0" />
+                <Font name="Pixelfy" size="53.0" />
             </font>
         </Text>
         <Text fill="#da1212" layoutX="126.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME OVER" wrappingWidth="609.13671875">
             <font>
-                <Font name="Pixelfy" size="120.0" />
+                <Font name="Pixelfy" size="100.0" />
             </font>
         </Text>
     </children>
