@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.beta.StartScreenController">
+   <children>
+      <Pane prefHeight="346.0" prefWidth="585.0">
+         <children>
+            <AnchorPane layoutX="66.0" layoutY="38.0" prefHeight="269.0" prefWidth="452.0">
+               <children>
+                  <GridPane layoutX="-1.0" prefHeight="270.0" prefWidth="456.0" style="-fx-alignment: CENTER;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon-blue.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin></ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                           <image>
+                              <Image url="@images/icon-yellow.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="60.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Label contentDisplay="CENTER" style="-fx-font-family: Comic Sans MS; -fx-font-weight: BOLD;" text="Get Ready" textFill="#cd2525" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <effect>
+                              <Shadow height="3.0" radius="1.0" width="3.0">
+                                 <color>
+                                    <Color red="0.8026315569877625" green="0.048306528478860855" blue="0.048306528478860855" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                        </Label>
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" text="Ready" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" text="Ready" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.03947368264198303" green="0.0393640361726284" blue="0.03892543911933899" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Button>
+
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+</VBox>
