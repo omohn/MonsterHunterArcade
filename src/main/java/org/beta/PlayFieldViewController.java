@@ -18,7 +18,6 @@ import java.util.Random;
 public class PlayFieldViewController {
 
     public static final int OFFSET = 2;
-    Random random = new Random();
 
     KeyHandler keyInput = KeyHandler.getInstance();
 

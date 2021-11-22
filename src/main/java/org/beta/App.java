@@ -2,6 +2,7 @@ package org.beta;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
@@ -20,13 +21,16 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+        Group group = new Group();
         scene = new Scene(loadFXML("startScreenView"), 850, 600);
         KeyHandler.getInstance().observeScene(scene);
 
-        Font.loadFont(getClass().getResourceAsStream("fonts/Pixelfy-ow9yd.ttf"), 14);
+
+//        Font.loadFont(getClass().getResourceAsStream("fonts/Pixelfy-ow9yd.ttf"), 14);
         stage.setScene(scene);
         stage.setTitle("Monster Hunter Arcade");
         stage.show();
+
 
     }
 

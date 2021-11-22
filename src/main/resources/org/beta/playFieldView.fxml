@@ -9,7 +9,8 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.beta.PlayFieldViewController">
+<BorderPane style="-fx-background-color: BLACK;" stylesheets="@css/monsterHunterArcade.css" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.beta.PlayFieldViewController">
    <center>
       <Pane fx:id="labyrinth" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#switchToStartScreenView" prefHeight="452.0" prefWidth="836.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
    </center>

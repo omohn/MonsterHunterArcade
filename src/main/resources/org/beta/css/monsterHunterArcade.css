@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .background {
     -fx-background-image: url("../images/wizardofwor_GAB.png");
     -fx-background-size: 100% 100%;
@@ -8,7 +10,11 @@
     /*-fx-background-size: 100% 100%;*/
 }
 
-@font-face {
-    font-family: Pixelfy;
-    src: url('../fonts/Pixelfy-ow9yd.ttf');
+.text{
+    -fx-font-family: 'Press Start 2P', cursive;
 }
+
+#MonsterHunterTitle {
+    -fx-font-size: 48;
+}
+
