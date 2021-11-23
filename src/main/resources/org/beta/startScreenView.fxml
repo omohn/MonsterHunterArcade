@@ -7,22 +7,27 @@
 <VBox alignment="CENTER" styleClass="background" stylesheets="@css/monsterHunterArcade.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.beta.StartScreenController">
    <children>
       <Label fx:id="MonsterHunterTitle" alignment="CENTER" prefHeight="178.0" prefWidth="661.0" stylesheets="@css/monsterHunterArcade.css" text="Monster Hunter Arcade" textAlignment="CENTER" wrapText="true">
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.7900000214576721" green="0.10270000249147415" blue="0.10270000249147415" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.6973684430122375" green="0.5602930784225464" blue="0.011991784907877445" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
+<!--         <textFill>-->
+<!--            <LinearGradient endX="1.0" endY="1.0">-->
+<!--               <stops>-->
+<!--                  <Stop>-->
+<!--                     <color>-->
+<!--                        <Color red="0.7900000214576721" green="0.10270000249147415" blue="0.10270000249147415" />-->
+<!--                     </color>-->
+<!--                  </Stop>-->
+<!--                  <Stop offset="0.9978134110787172">-->
+<!--                     <color>-->
+<!--                        <Color red="0.6973684430122375" green="0.5602930784225464" blue="0.011991784907877445" />-->
+<!--                     </color>-->
+<!--                  </Stop>-->
+<!--                  <Stop offset="1.0">-->
+<!--                     <color>-->
+<!--                        <Color red="0.6973684430122375" green="0.5602930784225464" blue="0.011991784907877445" />-->
+<!--                     </color>-->
+<!--                  </Stop>-->
+<!--               </stops>-->
+<!--            </LinearGradient>-->
+<!--         </textFill>-->
       </Label>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>

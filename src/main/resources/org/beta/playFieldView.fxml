@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
-<BorderPane style="-fx-background-color: BLACK;" stylesheets="@css/monsterHunterArcade.css" xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.beta.PlayFieldViewController">
+<BorderPane style="-fx-background-color: BLACK;" stylesheets="@css/monsterHunterArcade.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.beta.PlayFieldViewController">
    <center>
       <Pane fx:id="labyrinth" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#switchToStartScreenView" prefHeight="452.0" prefWidth="836.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
    </center>
    <top>
-      <GridPane prefHeight="107.0" prefWidth="836.0" style="-fx-background-color: BLACK;" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="107.0" prefWidth="836.0" styleClass="statsDisplay" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="85.66666666666666" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="382.3333435058594" minWidth="10.0" prefWidth="303.0" />
@@ -28,25 +22,13 @@
         </rowConstraints>
          <children>
             <Circle fill="YELLOW" radius="31.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.halignment="CENTER" GridPane.rowSpan="2" />
-            <Label text="Asterix" textFill="YELLOW" GridPane.columnIndex="1">
-               <font>
-                  <Font name="Arial Bold" size="30.0" />
-               </font>
+            <Label prefHeight="13.0" prefWidth="362.0" styleClass="p1" text="Asterix" GridPane.columnIndex="1">
             </Label>
-            <Label alignment="TOP_LEFT" prefHeight="86.0" prefWidth="67.0" text="4500" textFill="YELLOW" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Arial Bold" size="30.0" />
-               </font>
+            <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="323.0" styleClass="p1" text="4500" GridPane.columnIndex="1" GridPane.rowIndex="1">
             </Label>
-            <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="333.0" text="Obelix" textAlignment="RIGHT" textFill="BLUE" GridPane.columnIndex="2">
-               <font>
-                  <Font name="Arial Bold" size="30.0" />
-               </font>
+            <Label alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="333.0" styleClass="p2" text="Obelix" textAlignment="RIGHT" GridPane.columnIndex="2">
             </Label>
-            <Label alignment="TOP_RIGHT" prefHeight="80.0" prefWidth="333.0" text="2000" textFill="BLUE" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Arial Bold" size="30.0" />
-               </font>
+            <Label alignment="TOP_RIGHT" prefHeight="80.0" prefWidth="333.0" styleClass="p2" text="2000" GridPane.columnIndex="2" GridPane.rowIndex="1">
             </Label>
             <Circle fill="BLUE" radius="31.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowSpan="2" />
          </children>

@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@font-face {
+    font-family: 'Showcard Gothic';
+    src: url('../fonts/SHOWG.TTF');
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('../fonts/PressStart2P-Regular.ttf') format('truetype');
+}
+
+
 
 .background {
     -fx-background-image: url("../images/wizardofwor_GAB.png");
@@ -10,11 +20,28 @@
     /*-fx-background-size: 100% 100%;*/
 }
 
-.text{
+
+.button{
     -fx-font-family: 'Press Start 2P', cursive;
+    -fx-font-size: 16;
+    -fx-text-fill: #EFA8FF;
 }
 
 #MonsterHunterTitle {
-    -fx-font-size: 48;
+    -fx-font-family: 'Showcard Gothic', cursive;
+    -fx-font-size: 64;
+    -fx-text-fill: linear-gradient(to bottom right, yellow, red);
 }
 
+.statsDisplay {
+    -fx-font-family: 'Press Start 2P', cursive;
+    -fx-font-size: 20;
+}
+
+.p1 {
+    -fx-text-fill: yellow;
+}
+
+.p2 {
+    -fx-text-fill: blue;
+}
