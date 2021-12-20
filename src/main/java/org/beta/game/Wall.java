@@ -1,10 +1,12 @@
 package org.beta.game;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class Wall implements GameObject{
+public class Wall extends GameObject{
 
 
     private static final int WALL_DEPTH = 4; // Thickness of a wall
@@ -60,5 +62,10 @@ public class Wall implements GameObject{
     @Override
     public Shape getGameObject() {
         return wall;
+    }
+
+    @Override
+    public ImageView getSprite() {
+        return null;
     }
 }

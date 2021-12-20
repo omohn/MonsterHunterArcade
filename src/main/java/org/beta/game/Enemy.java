@@ -1,10 +1,12 @@
 package org.beta.game;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class Enemy implements GameObject{
+public class Enemy extends GameObject{
 
     private int velocity;
 
@@ -91,5 +93,10 @@ public class Enemy implements GameObject{
     @Override
     public Shape getGameObject() {
         return avatar;
+    }
+
+    @Override
+    public ImageView getSprite() {
+        return null;
     }
 }

@@ -1,16 +1,27 @@
 package org.beta.game;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public interface GameObject {
+public abstract class GameObject {
 
-    int getX();
+    Image sprite;
+    Vector location;
+    Vector velocity;
+    Rectangle boundary;
 
-    int getY();
 
-    void setX(int x);
+    abstract int getX();
 
-    void setY(int y);
+    abstract int getY();
 
-    Shape getGameObject();
+    abstract void setX(int x);
+
+    abstract void setY(int y);
+
+    public abstract Shape getGameObject();
+
+    public abstract ImageView getSprite();
 }

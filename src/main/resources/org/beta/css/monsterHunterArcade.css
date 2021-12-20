@@ -1,15 +1,3 @@
-@font-face {
-    font-family: 'Showcard Gothic';
-    src: url('../fonts/SHOWG.TTF');
-}
-
-@font-face {
-    font-family: 'Press Start 2P';
-    src: url('../fonts/PressStart2P-Regular.ttf') format('truetype');
-}
-
-
-
 .background {
     -fx-background-image: url("../images/wizardofwor_GAB.png");
     -fx-background-size: 100% 100%;
@@ -34,7 +22,7 @@
 }
 
 .statsDisplay {
-    -fx-font-family: 'Press Start 2P', cursive;
+    -fx-font-family: "Press Start 2P", cursive;
     -fx-font-size: 20;
 }
 

@@ -1,10 +1,15 @@
 package org.beta.game;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
 
-public class Player implements GameObject {
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class Player extends GameObject {
 
     private Circle avatar;
     private Paint color;
@@ -24,6 +29,13 @@ public class Player implements GameObject {
         this.radius = size / 2;
         this.avatar = new Circle(x + radius, y +  radius, radius);
         avatar.setFill(color);
+//        String file = "../images/blue_wizard.jpeg";
+//
+//        try {
+//            this.sprite = new Image(new FileInputStream(file));
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
     }
 
@@ -58,5 +70,10 @@ public class Player implements GameObject {
     @Override
     public Shape getGameObject() {
         return avatar;
+    }
+
+    @Override
+    public ImageView getSprite() {
+        return new ImageView(sprite);
     }
 }

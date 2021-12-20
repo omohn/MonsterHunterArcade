@@ -10,6 +10,7 @@ import javafx.scene.paint.Color;
 import org.beta.controls.KeyHandler;
 import org.beta.game.*;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -82,6 +83,13 @@ public class PlayFieldViewController {
                 gameObjects) {
             labyrinth.getChildren().add(gameObject.getGameObject());
         }
+
+        Player myPlayer = new Player(Color.RED, 0, 0, 64);
+        myPlayer.getSprite().setX(100);
+        myPlayer.getSprite().setY(100);
+        myPlayer.getSprite().setFitHeight(50);
+        myPlayer.getSprite().setFitWidth(50);
+        labyrinth.getChildren().add(myPlayer.getSprite());
 
 
         // initiating a Game Loop
