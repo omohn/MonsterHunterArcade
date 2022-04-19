@@ -34,8 +34,6 @@ public class PlayField extends Pane {
     public PlayField() {
         initializeLabyrinth();
 
-
-
     }
 
     private void initializeLabyrinth() {

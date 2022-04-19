@@ -8,7 +8,6 @@ import javafx.scene.shape.Shape;
 
 public class Wall extends GameObject{
 
-
     private static final int WALL_DEPTH = 4; // Thickness of a wall
     private static final int WALL_WIDTH = 64; // Length of a wall
     private static final Color WALL_COLOR = Color.BLUE; // Length of a wall

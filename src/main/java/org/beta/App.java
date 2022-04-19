@@ -12,6 +12,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.beta.controls.KeyHandler;
+import org.beta.objects.Player;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -33,7 +34,8 @@ public class App extends Application {
         Font.loadFont(getClass().getResource("fonts/PressStart2P-Regular.ttf").toExternalForm(), 10);
         Font.loadFont(getClass().getResource("fonts/showg.ttf").toExternalForm(), 10);
 
-//        scene = new Scene(loadFXML("startScreenView"), 850, 600);
+        scene = new Scene(loadFXML("gameView"));
+
 //        KeyHandler.getInstance().observeScene(scene);
 
 
@@ -47,19 +49,21 @@ public class App extends Application {
 //        text.setFont(font);
 //        text.setY(50);
 
-        URL spriteURL = getClass().getResource("images/SpriteStub.bmp");
-        Image sprite = new Image(spriteURL.toExternalForm(), 150, 150, true, true);
-        ImageView mySprite = new ImageView();
-        mySprite.setImage(sprite);
-        Rectangle2D spriteViewPort = new Rectangle2D(50, 0, 50, 50);
-        mySprite.setViewport(spriteViewPort);
+//        URL spriteURL = getClass().getResource("images/SpriteStub.bmp");
+//        Image sprite = new Image(spriteURL.toExternalForm(), 150, 150, true, true);
+//        ImageView mySprite = new ImageView();
+//        mySprite.setImage(sprite);
+//        Rectangle2D spriteViewPort = new Rectangle2D(50, 0, 50, 50);
+//        mySprite.setViewport(spriteViewPort);
 //        mySprite.setX(100);
 //        mySprite.setY(100);
 
-        Group root = new Group();
-        root.getChildren().add(mySprite);
+//        Group root = new Group();
+//        root.getChildren().add(mySprite);
 //        root.getChildren().add(text);
-        Scene scene = new Scene(root, 850, 600);
+//        Scene scene = new Scene(root, 850, 600);
+
+
 
         stage.setScene(scene);
         stage.setTitle("Monster Hunter Arcade");
