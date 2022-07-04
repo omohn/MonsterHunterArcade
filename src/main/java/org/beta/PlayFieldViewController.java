@@ -168,4 +168,9 @@ public class PlayFieldViewController {
 
     }
 
+
+    @FXML
+    private void switchToHighScoreView() throws IOException{
+        App.setRoot("highScoreView");
+    }
 }
